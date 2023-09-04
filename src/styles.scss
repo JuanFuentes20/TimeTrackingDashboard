@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20% 15%;
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--clr-neutral-very-dark-blue);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+:root {
+--clr-primary-blue: hsl(246, 80%, 60%);
+--clr-primary-light-red-work: hsl(15, 100%, 70%);
+--clr-primary-soft-blue-play: hsl(195, 74%, 62%);
+--clr-primary-light-red-study: hsl(348, 100%, 68%);
+--clr-primary-lime-green-exercise: hsl(145, 58%, 55%);
+--clr-primary-violet-social: hsl(264, 64%, 52%);
+--clr-primary-soft-orange-self-care: hsl(43, 84%, 65%);
+
+--clr-neutral-very-dark-blue: hsl(224, 50%, 9%);
+--clr-neutral-dark-blue: hsl(235, 46%, 20%);
+--clr-neutral-desaturated-blue: hsl(235, 45%, 61%);
+--clr-neutral-pale-blue: hsl(236, 100%, 87%);
+
+  --fs-l: 3.5rem;
+  --fs-m: 2.5rem;
+  --fs-s: 2rem;
+  --fs-xs: 1rem;
+  --fs-xxs: 0.8rem;
+}
+
+h1 {
+    font-size: var(--fs-s);
+    font-weight: 100;
+}
+
+p {
+    font-size: var(--fs-xxs);
+    font-weight: 100;
+    opacity: 0.6;
+}
+
+h2 {
+    font-size: var(--fs-m);
+    font-weight: 100;
+}
+
+h3 {
+    font-size: var(--fs-xs);
+    font-weight: 400;
+}
+
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.main-widget {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    grid-row: span 2;
+    color: white;
+    background-color: var(--clr-neutral-dark-blue);
+}
+
+.main-widget img {
+    width: 4rem;
+    object-fit: contain;
+    border: 2px solid white;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.personal-section {
+    background-color: var(--clr-primary-blue);
+    height: 65%;
+    padding: 1.5rem;
+    border-radius: 0.5rem 0.5rem 1rem 1rem;
+}
+
+.personal-info {
+    width: min-content;
+}
+
+.time-period {
+    height: 35%;
+    padding: 1.5rem;
+}
+
+.time-period p:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.activity-card {
+aspect-ratio: 1;
+position: relative;
+border-radius: 0.5rem;
+overflow: hidden;
+}
+
+.activity-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    bottom: -1px;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: var(--clr-neutral-dark-blue);
+}
+
+.activity-score {
+    line-height: 2rem;
+}
+
+$activity-card-backgrounds: 
+var(--clr-primary-light-red-work),
+var(--clr-primary-light-red-work),
+var(--clr-primary-soft-blue-play),
+var(--clr-primary-light-red-study),
+var(--clr-primary-lime-green-exercise),
+var(--clr-primary-violet-social),
+var(--clr-primary-soft-orange-self-care);
+
+@for $i from 1 through length($activity-card-backgrounds) {
+.activity-card:nth-child(#{$i}) {
+    background-color: nth($activity-card-backgrounds, $i);
+}
+}
+
+.activity-img {
+    position: absolute;
+    width: 60px;
+    object-fit: contain;
+    top: -6px;
+    right: 10px;
+}
+
+.activity-item img {
+width: 15px;
+object-fit: contain;
+}
+
+.activity-info {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
