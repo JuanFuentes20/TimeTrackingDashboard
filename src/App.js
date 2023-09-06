@@ -24,16 +24,21 @@ function App() {
   
 
   return (
-    <div className='dashboard'>
-      <MainWidget setPeriod={setPeriod}/>
-      {activityData.map(activity => {
-        return (<Activity key={activity.title} period={period} activity={activity}/>)
-      })}
-      <div className="footer attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. 
-        Coded by <a href="https://www.frontendmentor.io/profile/JuanFuentes20">Juan Fuentes</a>.
+    <>
+      <div className='dashboard'>
+        <MainWidget setPeriod={setPeriod}/>
+        {activityData.map(activity => {
+          return (<Activity key={activity.title} period={period} activity={activity}/>)
+        })}
+      </div>  
+      <div className="footer">
+        <p>
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noreferrer">Frontend Mentor</a>. 
+          Coded by <a href="https://www.frontendmentor.io/profile/JuanFuentes20">Juan Fuentes</a>.
+        </p>
       </div>
-    </div>
+    </>
+    
   );
 }
 

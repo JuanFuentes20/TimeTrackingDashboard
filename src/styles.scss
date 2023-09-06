@@ -6,16 +6,20 @@
 
 body {
     width: 100%;
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; */
-    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+    font-family: Rubik, sans-serif;
     background-color: var(--clr-neutral-very-dark-blue);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
   
 :root {
 --clr-primary-blue: hsl(246, 80%, 60%);
@@ -37,20 +41,6 @@ body {
   --fs-xs: 1rem;
   --fs-xxs: 0.8rem;
 }
-
-/*@media screen and (min-width: 1024px) {
-    .dashboard {
-        width: 70rem;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .dashboard {
-        width: 47rem;
-        height: 33rem;
-    }
-
-} */
 
 h1 {
     font-size: var(--fs-s);
@@ -75,6 +65,7 @@ h3 {
 
 
 .dashboard {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(1, minmax(0,1fr));
     gap: 1.5rem;
@@ -195,3 +186,97 @@ align-items: center;
     font-size: var(--fs-xxs);
     text-align: center;
 }
+
+.footer a {
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+
+    :root {
+        --fs-m: 3rem;
+        --fs-s: 2.3rem;
+        --fs-xs: 1.3rem;
+        --fs-xxs: 0.9rem;
+    }
+
+    h2 {
+        width: 100%;
+    }
+
+    .main-widget {
+        display: grid;
+        height: auto;
+        grid-template-rows: 2fr 1fr;
+    }
+
+    .activity-score p {
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+    }
+
+    .dashboard {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0;
+        width: 47rem;
+        height: 32rem;
+        margin-bottom: 2rem;
+    }
+
+    .personal-section {
+        flex-direction: column;
+        align-items: start;
+        gap: 0;
+    }
+
+    .personal-section img {
+        width: 5rem;
+    }
+
+    .personal-info {
+        margin-top: 1.5rem;
+    }
+
+    .time-period {
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: space-between;
+    }
+
+    .activity-card {
+        height: unset;
+    }
+
+    .activity-score {
+        width: max-content;
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+
+    .dashboard {
+        width: 63rem;
+    }
+
+    .personal-section img {
+        width: 7rem;
+    }
+
+    .activity-item {
+        justify-content: unset;
+        gap: 2.5rem;
+    }
+
+    .activity-score {
+        gap: 1rem;
+    }
+
+    .activity-score p {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+}
+
