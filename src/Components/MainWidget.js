@@ -16,7 +16,7 @@ function MainWidget({setPeriod}) {
     return (
         <div className="main-widget">
             <div className="personal-section">
-                <img alt="profile icon" src="/images/image-jeremy.png"></img>
+                <img alt="profile icon" src="./images/image-jeremy.png"></img>
                 <div className="personal-info">
                     <p>Report for</p>
                     <h1>Jeremy Robson</h1>
